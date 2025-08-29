@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Victor Marshall - Web Developer & Software Developer</title>
+    <meta name="description" content="Victor Marshall - Passionate web developer and software engineer based in Lagos, Nigeria. Creating innovative solutions with AI and modern web technologies.">
+    <link rel="icon" href="V.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#home">VM</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#ambition">Ambition</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="Pre.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home">
+        <h1>Victor Marshall</h1>
+        <img src="banner.png" alt="Victor Marshall Banner" class="banner-image">
+        <p>Web Developer | Software Engineer</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p class="hidden">I'm a passionate web developer and software developer based in Lagos, Nigeria. With the aim of making the world a better place, my skills include front-end technologies such as HTML, CSS, and JavaScript. I thrive on creating intuitive and engaging user experiences and have worked on projects like personal blogs and software development.
+            In my free time, I love exploring new technologies and taking some online courses. I'm always eager to learn and take on new challenges, whether it's mastering a new programming language or collaborating on innovative projects. My goal is to combine my technical skills and creativity to make a positive impact in the tech community.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="hidden">
+            <li>Web development 🌐</li>
+            <li>Software engineering 💻</li>
+            <li>Python programming 🐍</li>
+            <li>Teamwork 🤝</li>
+            <li>Problem solving 🛠</li>
+            <li>Cooking 🍳</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul class="hidden">
+            <li>WhiteChop</li>
+            <li>Husband & Wife Restaurant</li>
+            <li>Currently self employed</li>
+            <li>Business Strategy</li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+         <p class="hidden">Undergraduate in Computer Science</p>
+
+      
+        
+    </section>
+
+    <section id="ambition">
+        <h2>My Ambition</h2>
+        <div class="hidden">
+            <p>My ambition is to leverage the power of software and artificial intelligence to make the world a better place. I believe that technology has the potential to solve some of humanity's most pressing challenges, from improving healthcare and education to fostering sustainability and enhancing communication. My aim is to utilize the power of AI for positive impact and not harm others on the internet.</p>
+            
+            <p>Through my work as a web developer and software developer, I strive to create innovative solutions that empower individuals and communities. I am passionate about <span class="highlight">building applications that not only meet user needs but also contribute to a greater purpose</span>. By harnessing the capabilities of AI, I aim to develop systems that <span class="highlight">enhance decision-making, and facilitate meaningful interactions.</span></p>
+            
+            <p>I envision a future where technology is a force for good, driving positive change and improving the quality of life for people around the globe. My commitment to continuous learning and collaboration in the tech community fuels my desire to turn this vision into reality. Together, we can harness the potential of software and AI to create a brighter, more equitable future.</p>
+            
+            <p class="contact-cta">Feel free to contact me :)</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Get In Touch</h2>
+        <div class="social-links">
+            <a href="mailto:marshallvictor46@gmail.com" title="Email me">
+                <img src="gmail-icon.png" alt="Gmail" class="gmail-icon" height="55">
+            </a>
+            <a href="https://www.linkedin.com/in/marshall-victor-501460213/" target="_blank" title="LinkedIn Profile">
+                <img src="linkedin-icon.png" alt="LinkedIn Profile" class="linkedin-icon" height="55">
+            </a>
+            <a href="https://wwww.facebook.com/profile.php?id=61576767331802" target="_blank" title="Facebook Profile">
+                <img src="facebook-icon.png" alt="Facebook Profile" class="facebook-icon" height="55">
+            </a>
+            <a href="https://x.com/marshallvicto18" target="_blank" title="X (Twitter) Profile">
+                <img src="x-icon.png" alt="X Profile" class="x-icon" height="55">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced JavaScript for better user experience
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hamburger menu functionality
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+            
+            // Close menu when pressing Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+
+            // Smooth reveal animation for hidden content
+            document.querySelectorAll('section h2').forEach(function(header) {
+                header.addEventListener('click', function() {
+                    const nextElement = header.nextElementSibling;
+                    
+                    if (nextElement.classList.contains('hidden')) {
+                        nextElement.classList.remove('hidden');
+                        nextElement.classList.add('show');
+                    } else {
+                        nextElement.classList.remove('show');
+                        nextElement.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Add scroll effect to navigation
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                    nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                    nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                }
+            });
+
+            // Add intersection observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
