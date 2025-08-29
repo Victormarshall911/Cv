@@ -1,389 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Projects | Victor Marshall</title>
-    <link rel="icon" href="V.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #e2e8f0;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
-            min-height: 100vh;
-            padding: 90px 16px 40px;
-        }
-        a { color: inherit; text-decoration: none; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Victor Marshall</title>
+  <link rel="icon" href="V.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #e2e8f0;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+      min-height: 100vh;
+      padding: 90px 16px 40px;
+    }
+    a { color: inherit; text-decoration: none; }
 
-        /* Top bar */
-        .topbar {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(15, 15, 35, 0.95);
-            border-bottom: 1px solid rgba(99, 102, 241, 0.25);
-            backdrop-filter: blur(10px);
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 14px 18px;
-        }
-        .topbar .brand { font-weight: 700; font-size: 1.1rem; color: #cbd5e1; }
-        .topbar .back {
-            padding: 8px 14px; border-radius: 10px; border: 1px solid rgba(99,102,241,.3);
-            background: rgba(99,102,241,.1); color: #6366f1; transition: .25s;
-        }
-        .topbar .back:hover { transform: translateY(-2px); background: rgba(99,102,241,.2); box-shadow: 0 6px 18px rgba(99,102,241,.25); }
+    /* Top bar */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(15, 15, 35, 0.95);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.25);
+      backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px;
+    }
+    .topbar .brand { font-weight: 700; font-size: 1.1rem; color: #cbd5e1; }
+    .topbar .back {
+      padding: 8px 14px; border-radius: 10px; border: 1px solid rgba(99,102,241,.3);
+      background: rgba(99,102,241,.1); color: #6366f1; transition: .25s;
+    }
+    .topbar .back:hover { transform: translateY(-2px); background: rgba(99,102,241,.2); box-shadow: 0 6px 18px rgba(99,102,241,.25); }
 
-        .container { max-width: 1200px; margin: 0 auto; }
+    .container { max-width: 1200px; margin: 0 auto; }
 
-        /* Uploader */
-        .uploader {
-            background: rgba(15, 15, 35, 0.8);
-            border: 1px solid rgba(99,102,241,.25);
-            border-radius: 18px;
-            padding: 18px;
-            margin-bottom: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.35);
-        }
-        .uploader h2 {
-            font-size: 1.25rem; margin-bottom: 14px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-        .form-grid .full { grid-column: 1 / -1; }
-        label { font-size: .9rem; color: #cbd5e1; display: block; margin-bottom: 6px; }
-        input[type="text"], textarea, input[type="url"] {
-            width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(99,102,241,.25);
-            background: rgba(15,15,35,.6); color: #e2e8f0; outline: none; transition: .2s; font-size: .95rem;
-        }
-        textarea { min-height: 88px; resize: vertical; }
-        input[type="text"]:focus, textarea:focus, input[type="url"]:focus { border-color: rgba(139,92,246,.6); box-shadow: 0 0 0 3px rgba(99,102,241,.15); }
+    /* Gallery */
+    .gallery { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+    .card {
+      background: rgba(15, 15, 35, 0.8);
+      border: 1px solid rgba(99,102,241,.25);
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 10px 26px rgba(0,0,0,.35); transition: .25s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(99,102,241,.22); }
+    .thumb { width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid rgba(99,102,241,.2); }
+    .card-body { padding: 14px; }
+    .card-title { font-weight: 700; margin-bottom: 6px; color: #e5e7eb; }
+    .card-desc { color: #cbd5e1; font-size: .95rem; margin-bottom: 8px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+    .tag { font-size: .8rem; padding: 4px 8px; border-radius: 999px; background: rgba(99,102,241,.15); border: 1px solid rgba(99,102,241,.35); color: #a5b4fc; }
+    .card-actions { display: flex; gap: 10px; }
+    .card a { color: #93c5fd; }
 
-        .dropzone {
-            border: 2px dashed rgba(99,102,241,.35); border-radius: 14px; padding: 16px; text-align: center;
-            background: rgba(15,15,35,.4); color: #cbd5e1; transition: .25s; cursor: pointer;
-        }
-        .dropzone:hover { background: rgba(99,102,241,.08); }
-        .dropzone.dragover { background: rgba(99,102,241,.15); border-color: rgba(139,92,246,.6); }
-        .actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 10px; }
-        .btn {
-            padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(99,102,241,.35);
-            background: linear-gradient(135deg, rgba(99,102,241,.18), rgba(139,92,246,.18));
-            color: #e2e8f0; cursor: pointer; transition: .25s; font-weight: 600;
-        }
-        .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(99,102,241,.25); }
-        .btn.secondary { background: rgba(15,15,35,.6); color: #cbd5e1; }
+    .empty {
+      text-align: center; color: #94a3b8; padding: 30px; border: 1px dashed rgba(99,102,241,.25);
+      background: rgba(15,15,35,.5); border-radius: 16px;
+    }
 
-        /* Gallery */
-        .gallery {
-            display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr);
-        }
-        .card {
-            background: rgba(15, 15, 35, 0.8);
-            border: 1px solid rgba(99,102,241,.25);
-            border-radius: 16px; overflow: hidden;
-            box-shadow: 0 10px 26px rgba(0,0,0,.35); transition: .25s;
-        }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(99,102,241,.22); }
-        .thumb { width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid rgba(99,102,241,.2); }
-        .card-body { padding: 14px; }
-        .card-title { font-weight: 700; margin-bottom: 6px; color: #e5e7eb; }
-        .card-desc { color: #cbd5e1; font-size: .95rem; margin-bottom: 8px; }
-        .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
-        .tag { font-size: .8rem; padding: 4px 8px; border-radius: 999px; background: rgba(99,102,241,.15); border: 1px solid rgba(99,102,241,.35); color: #a5b4fc; }
-        .card-actions { display: flex; gap: 10px; }
-        .card a { color: #93c5fd; }
+    /* Lightbox */
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: flex; align-items: center; justify-content: center; z-index: 2000; padding: 16px; }
+    .lightbox.hidden { display: none; }
+    .lightbox-img { max-width: 92vw; max-height: 90vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,.6); border: 1px solid rgba(99,102,241,.35); }
+    .lightbox-close { position: fixed; top: 14px; right: 16px; background: rgba(99,102,241,.15); border: 1px solid rgba(99,102,241,.35); color: #e2e8f0; font-size: 22px; line-height: 1; padding: 8px 12px; border-radius: 10px; cursor: pointer; }
+    .lightbox-close:hover { background: rgba(99,102,241,.25); }
 
-        .empty {
-            text-align: center; color: #94a3b8; padding: 30px; border: 1px dashed rgba(99,102,241,.25);
-            background: rgba(15,15,35,.5); border-radius: 16px;
-        }
-
-        /* Lightbox */
-        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: flex; align-items: center; justify-content: center; z-index: 2000; padding: 16px; }
-        .lightbox.hidden { display: none; }
-        .lightbox-img { max-width: 92vw; max-height: 90vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,.6); border: 1px solid rgba(99,102,241,.35); }
-        .lightbox-close { position: fixed; top: 14px; right: 16px; background: rgba(99,102,241,.15); border: 1px solid rgba(99,102,241,.35); color: #e2e8f0; font-size: 22px; line-height: 1; padding: 8px 12px; border-radius: 10px; cursor: pointer; }
-        .lightbox-close:hover { background: rgba(99,102,241,.25); }
-
-        .hidden { display: none; }
-
-        /* Responsive */
-        @media (max-width: 1024px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 600px) {
-            .form-grid { grid-template-columns: 1fr; }
-            .gallery { grid-template-columns: 1fr; }
-            body { padding: 80px 10px 30px; }
-        }
-    </style>
+    /* Responsive */
+    @media (max-width: 1024px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .gallery { grid-template-columns: 1fr; body { padding: 80px 10px 30px; } } }
+  </style>
 </head>
 <body>
-    <div class="topbar">
-        <div class="brand">Projects</div>
-        <div style="display:flex; gap:10px; align-items:center;">
-            <button id="adminBtn" class="back" type="button" title="Admin unlock">Admin</button>
-            <a class="back" href="index.html">← Back to Portfolio</a>
-        </div>
-    </div>
+  <div class="topbar">
+    <div class="brand">Projects</div>
+    <a class="back" href="index.html">← Back to Portfolio</a>
+  </div>
 
-    <div class="container">
-        <section id="uploaderSection" class="uploader hidden" aria-label="Add a new project">
-            <h2>Add New Project</h2>
-            <div class="form-grid">
-                <div>
-                    <label for="title">Project Title</label>
-                    <input id="title" type="text" placeholder="e.g., E-commerce Website" />
-                </div>
-                <div>
-                    <label for="link">Project Link (optional)</label>
-                    <input id="link" type="url" placeholder="https://..." />
-                </div>
-                <div class="full">
-                    <label for="description">Description</label>
-                    <textarea id="description" placeholder="Briefly describe what you built and the stack used..."></textarea>
-                </div>
-                <div>
-                    <label for="tags">Tags (comma separated)</label>
-                    <input id="tags" type="text" placeholder="HTML, CSS, JavaScript" />
-                </div>
-                <div>
-                    <label>Project Image</label>
-                    <div id="dropzone" class="dropzone">Drop image here or click to select (PNG/JPG)</div>
-                    <input id="imageInput" type="file" accept="image/*" style="display:none" />
-                </div>
+  <div class="container">
+    <h2 style="font-size:1.1rem; margin: 0 0 10px; background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Your Projects</h2>
+    <div id="gallery" class="gallery"></div>
+    <div id="emptyState" class="empty" style="display:none">No projects yet. Add some manually in the code!</div>
+  </div>
+
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Image preview">
+    <img id="lightboxImg" class="lightbox-img" src="" alt="Project image" />
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close">✕</button>
+  </div>
+
+  <script>
+    // 👉 Edit this array manually in your IDE to add projects
+    const projects = [
+      {
+        title: "Simple Internet Video Downloader",
+        description: "This is a software built to help users save videos locally to their device and make them accessible without internet access.",
+        tags: ["Python", "CSS", "HTML"],
+        link: "",
+        image: "pro1.png"
+      },
+      
+      {
+        title: "Simple sign up and login page with database",
+        description: "This is a project created for mobile devices (iOS and Andriod) and handles both sign up and login to the software.",
+        tags: ["Flutter", "Dart", "Firebase"],
+        link: "",
+        image: "mobile.png"
+      },
+
+      {
+        title: "CGPA calculator for C.I.S 100 Lvl 1st semester",
+        description: "A simple CLI calculator that calculates students CGPA",
+        tags: ["C#", "Shell", ],
+        link: "",
+        image: "calc.png"
+      },
+
+      // Add more projects here ↓
+      // {
+      //   title: "My Portfolio",
+      //   description: "Built with React + Tailwind.",
+      //   tags: ["React", "TailwindCSS"],
+      //   link: "https://github.com/username/portfolio",
+      //   image: "images/portfolio.png"
+      // }
+    ];
+
+    const gallery = document.getElementById("gallery");
+    const emptyState = document.getElementById("emptyState");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    function renderProjects() {
+      gallery.innerHTML = "";
+      if (!projects.length) {
+        emptyState.style.display = "block";
+        return;
+      }
+      emptyState.style.display = "none";
+      projects.forEach((p, idx) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img class="thumb" src="${p.image}" alt="${p.title}" data-idx="${idx}" />
+          <div class="card-body">
+            <div class="card-title">${p.title}</div>
+            <div class="card-desc">${p.description}</div>
+            <div class="meta">${(p.tags||[]).map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
+            <div class="card-actions">
+              ${p.link ? `<a href="${p.link}" target="_blank">View ↗</a>` : ''}
             </div>
-            <div class="actions">
-                <button id="clearBtn" class="btn secondary" type="button">Clear</button>
-                <button id="saveBtn" class="btn" type="button">Save Project</button>
-            </div>
-        </section>
+          </div>
+        `;
+        gallery.appendChild(card);
+      });
+    }
 
-        <section>
-            <h2 style="font-size:1.1rem; margin: 0 0 10px; background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Your Projects</h2>
-            <div id="gallery" class="gallery"></div>
-            <div id="emptyState" class="empty" style="display:none">No projects yet. Add one above! You can also upload an image named <strong>pro1</strong> from your computer.</div>
-        </section>
-    </div>
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || "Project image";
+      lightbox.classList.remove("hidden");
+    }
+    function closeLightbox() {
+      lightbox.classList.add("hidden");
+      lightboxImg.src = "";
+    }
 
-    <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Image preview">
-        <img id="lightboxImg" class="lightbox-img" src="" alt="Project image" />
-        <button id="lightboxClose" class="lightbox-close" aria-label="Close">✕</button>
-    </div>
+    gallery.addEventListener("click", (e) => {
+      const img = e.target.closest(".thumb");
+      if (img) openLightbox(img.src, img.alt);
+    });
 
-    <script>
-    (function() {
-        const gallery = document.getElementById('gallery');
-        const emptyState = document.getElementById('emptyState');
-        const dropzone = document.getElementById('dropzone');
-        const imageInput = document.getElementById('imageInput');
-        const saveBtn = document.getElementById('saveBtn');
-        const clearBtn = document.getElementById('clearBtn');
-        const titleEl = document.getElementById('title');
-        const linkEl = document.getElementById('link');
-        const descEl = document.getElementById('description');
-        const tagsEl = document.getElementById('tags');
-        const uploaderSection = document.getElementById('uploaderSection');
-        const adminBtn = document.getElementById('adminBtn');
-        
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const lightboxClose = document.getElementById('lightboxClose');
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target === lightboxClose) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.classList.contains("hidden")) closeLightbox();
+    });
 
-        const ADMIN_FLAG = 'vm_is_admin';
-        const ADMIN_PIN = '1977'; // change this to your own secret
-
-        function isAdmin() {
-            return localStorage.getItem(ADMIN_FLAG) === 'true';
-        }
-
-        function setAdmin(on) {
-            localStorage.setItem(ADMIN_FLAG, on ? 'true' : 'false');
-            applyAdminMode();
-        }
-
-        function unlockAdmin() {
-            const pin = prompt('Enter admin PIN');
-            if (!pin) return;
-            if (pin === ADMIN_PIN) {
-                setAdmin(true);
-                alert('Admin mode enabled on this device.');
-            } else {
-                alert('Incorrect PIN');
-            }
-        }
-
-        function applyAdminMode() {
-            if (isAdmin()) {
-                uploaderSection.classList.remove('hidden');
-                // show delete links
-                document.querySelectorAll('.delete').forEach(el=> el.classList.remove('hidden'));
-                adminBtn.textContent = 'Admin (On)';
-            } else {
-                uploaderSection.classList.add('hidden');
-                document.querySelectorAll('.delete').forEach(el=> el.classList.add('hidden'));
-                adminBtn.textContent = 'Admin';
-            }
-        }
-
-        adminBtn.addEventListener('click', function(){
-            if (isAdmin()) {
-                if (confirm('Turn off admin mode on this device?')) setAdmin(false);
-            } else {
-                unlockAdmin();
-            }
-        });
-
-        let imageDataUrl = '';
-
-        function loadProjects() {
-            const raw = localStorage.getItem('vm_projects');
-            const projects = raw ? JSON.parse(raw) : [];
-            render(projects);
-            applyAdminMode();
-        }
-
-        function render(projects) {
-            gallery.innerHTML = '';
-            if (!projects.length) {
-                emptyState.style.display = 'block';
-                return;
-            }
-            emptyState.style.display = 'none';
-            projects.forEach((p, idx) => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `
-                    <img class="thumb" src="${p.image}" alt="${p.title}" data-idx="${idx}" />
-                    <div class="card-body">
-                        <div class="card-title">${p.title || 'Untitled Project'}</div>
-                        <div class="card-desc">${p.description || ''}</div>
-                        <div class="meta">${(p.tags||[]).map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
-                        <div class="card-actions">
-                            ${p.link ? `<a href="${p.link}" target="_blank">View ↗</a>` : ''}
-                            <a href="#" data-idx="${idx}" class="delete">Delete</a>
-                        </div>
-                    </div>
-                `;
-                gallery.appendChild(card);
-            });
-            // Hide delete if not admin
-            if (!isAdmin()) {
-                document.querySelectorAll('.delete').forEach(el=> el.classList.add('hidden'));
-            }
-        }
-
-        function openLightbox(src, alt) {
-            lightboxImg.src = src;
-            lightboxImg.alt = alt || 'Project image';
-            lightbox.classList.remove('hidden');
-        }
-        function closeLightbox() {
-            lightbox.classList.add('hidden');
-            lightboxImg.src = '';
-        }
-
-        function saveProject() {
-            const raw = localStorage.getItem('vm_projects');
-            const projects = raw ? JSON.parse(raw) : [];
-            if (!imageDataUrl) {
-                alert('Please select an image for the project.');
-                return;
-            }
-            const proj = {
-                title: titleEl.value.trim(),
-                link: linkEl.value.trim(),
-                description: descEl.value.trim(),
-                tags: tagsEl.value.split(',').map(t=>t.trim()).filter(Boolean),
-                image: imageDataUrl,
-                createdAt: Date.now()
-            };
-            projects.unshift(proj);
-            localStorage.setItem('vm_projects', JSON.stringify(projects));
-            clearForm();
-            loadProjects();
-        }
-
-        function clearForm() {
-            titleEl.value = '';
-            linkEl.value = '';
-            descEl.value = '';
-            tagsEl.value = '';
-            imageDataUrl = '';
-            dropzone.textContent = 'Drop image here or click to select (PNG/JPG)';
-        }
-
-        function handleFiles(files) {
-            const file = files && files[0];
-            if (!file) return;
-            if (!file.type.startsWith('image/')) {
-                alert('Please upload an image file.');
-                return;
-            }
-            const reader = new FileReader();
-            reader.onload = () => {
-                imageDataUrl = reader.result;
-                dropzone.textContent = file.name + ' selected';
-            };
-            reader.readAsDataURL(file);
-        }
-
-        // Drag & drop
-        dropzone.addEventListener('click', () => imageInput.click());
-        dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
-        dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
-        dropzone.addEventListener('drop', (e) => { e.preventDefault(); dropzone.classList.remove('dragover'); handleFiles(e.dataTransfer.files); });
-        imageInput.addEventListener('change', (e) => handleFiles(e.target.files));
-
-        // Buttons
-        saveBtn.addEventListener('click', saveProject);
-        clearBtn.addEventListener('click', clearForm);
-
-        // Delete handler (event delegation)
-        gallery.addEventListener('click', (e) => {
-            const img = e.target.closest('.thumb');
-            if (img) {
-                openLightbox(img.src, img.alt);
-                return;
-            }
-            const del = e.target.closest('.delete');
-            if (!del) return;
-            e.preventDefault();
-            const idx = Number(del.getAttribute('data-idx'));
-            const raw = localStorage.getItem('vm_projects');
-            const projects = raw ? JSON.parse(raw) : [];
-            projects.splice(idx, 1);
-            localStorage.setItem('vm_projects', JSON.stringify(projects));
-            loadProjects();
-        });
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox || e.target === lightboxClose) {
-                closeLightbox();
-            }
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
-        });
-
-        // Seed example (only once) if empty and if an image named pro1 exists in same folder it can be selected via uploader
-        (function seedExample() {
-            const raw = localStorage.getItem('vm_projects');
-            const projects = raw ? JSON.parse(raw) : [];
-            if (projects.length) return;
-            const example = {
-                title: 'Sample Project',
-                link: '',
-                description: 'Add your projects here. Click Save Project after choosing an image (e.g., pro1).',
-                tags: ['HTML', 'CSS', 'JavaScript'],
-                image: 'Resume/1.png',
-                createdAt: Date.now()
-            };
-            projects.push(example);
-            localStorage.setItem('vm_projects', JSON.stringify(projects));
-        })();
-
-        loadProjects();
-    })();
-    </script>
+    renderProjects();
+  </script>
 </body>
 </html>
