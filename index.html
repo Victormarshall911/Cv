@@ -1,202 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Victor Marshall - Web Developer & Software Developer</title>
-    <meta name="description" content="Victor Marshall - Passionate web developer and software engineer based in Lagos, Nigeria. Creating innovative solutions with AI and modern web technologies.">
-    <link rel="icon" href="V.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Victor Marshall — Web Developer</title>
+  <link rel="icon" href="V.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <meta name="description" content="Victor Marshall — Software Developer. Portfolio, projects, skills, and contact." />
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="nav-brand">
-                <a href="#home">VM</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#ambition">Ambition</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="Pre.html">Projects</a></li>
-            </ul>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="V.ico" alt="Victor Marshall logo" class="logo" />
+        <h1 class="brand-title">Victor <span>Marshall</span></h1>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="darkToggle" class="dark-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <!-- simple icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+          </svg>
+        </button>
+
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy reveal-up">
+        <h2>Software Developer | Fullstack Developer | Software Engineer</h2>
+        <p>I'm a passionate Fullstack developer based in Lagos, Nigeria. I build intuitive, scalable web experiences and enjoy solving real problems with clean code and modern tools.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Start a Project</a>
+          <a href="#projects" class="btn btn-outline">View Projects</a>
+          <a href="./resume.pdf" class="btn btn-ghost" download>Download Resume</a>
         </div>
-    </nav>
+      </div>
+      <div class="hero-visual reveal-up delay-sm">
+        <!-- optional profile image or illustration -->
+        <div class="visual-card">
+          <img src="banner.png" alt="Victor Marshall" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <header id="home">
-        <h1>Victor Marshall</h1>
-        <img src="banner.png" alt="Victor Marshall Banner" class="banner-image">
-        <p>Web Developer | Software Engineer</p>
-    </header>
-
-    <section id="about">
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
         <h2>About Me</h2>
-        <p class="hidden">I'm a passionate web developer and software developer based in Lagos, Nigeria. With the aim of making the world a better place, my skills include front-end technologies such as HTML, CSS, and JavaScript. I thrive on creating intuitive and engaging user experiences and have worked on projects like personal blogs and software development.
-            In my free time, I love exploring new technologies and taking some online courses. I'm always eager to learn and take on new challenges, whether it's mastering a new programming language or collaborating on innovative projects. My goal is to combine my technical skills and creativity to make a positive impact in the tech community.</p>
-    </section>
+        <p>Short biography and mission statement.</p>
+      </div>
 
-    <section id="skills">
+      <div class="two-col">
+        <div class="card reveal-up delay-sm">
+          <h3>Who I am</h3>
+          <p>I'm a passionate Software developer and software engineer based in Lagos, Nigeria. I build user-friendly interfaces and reliable backends using modern web technologies. I enjoy learning new tools and collaborating with teams to ship value.</p>
+          <p>My interests include web development, software development, mobile development, backend services, and exploring new technologies for real-world problems.</p>
+        </div>
+
+        <div class="card reveal-up delay-md">
+          <h3>My Ambition</h3>
+          <p>I aim to use software and AI to create positive impact and practical solutions — building products that help people and businesses achieve more with less friction.</p>
+          <p style="color: blue;">#SolvingRealLifeProblems</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
         <h2>Skills</h2>
-        <ul class="hidden">
-            <li>Web development 🌐</li>
-            <li>Software engineering 💻</li>
-            <li>Python programming 🐍</li>
-            <li>Teamwork 🤝</li>
-            <li>Problem solving 🛠</li>
-            <li>Cooking 🍳</li>
-        </ul>
-    </section>
+        <p>Technologies and strengths I bring to projects.</p>
+      </div>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul class="hidden">
-            <li>WhiteChop</li>
-            <li>Husband & Wife Restaurant</li>
-            <li>Currently self employed</li>
-            <li>Business Strategy</li>
-        </ul>
-    </section>
+      <div class="skills-grid reveal-up delay-sm">
+        <div class="skill">HTML &amp; CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Django</div>
+        <div class="skill">React-Native</div>
+        <div class="skill">Python</div>
+        <div class="skill">Problem Solving</div>
+      </div>
+    </div>
+  </section>
 
-    <section id="education">
-        <h2>Education</h2>
-         <p class="hidden">Undergraduate in Computer Science</p>
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <h2>Experience & Education</h2>
+        <p>Work history and academic background.</p>
+      </div>
 
-      
-        
-    </section>
-
-    <section id="ambition">
-        <h2>My Ambition</h2>
-        <div class="hidden">
-            <p>My ambition is to leverage the power of software and artificial intelligence to make the world a better place. I believe that technology has the potential to solve some of humanity's most pressing challenges, from improving healthcare and education to fostering sustainability and enhancing communication. My aim is to utilize the power of AI for positive impact and not harm others on the internet.</p>
-            
-            <p>Through my work as a web developer and software developer, I strive to create innovative solutions that empower individuals and communities. I am passionate about <span class="highlight">building applications that not only meet user needs but also contribute to a greater purpose</span>. By harnessing the capabilities of AI, I aim to develop systems that <span class="highlight">enhance decision-making, and facilitate meaningful interactions.</span></p>
-            
-            <p>I envision a future where technology is a force for good, driving positive change and improving the quality of life for people around the globe. My commitment to continuous learning and collaboration in the tech community fuels my desire to turn this vision into reality. Together, we can harness the potential of software and AI to create a brighter, more equitable future.</p>
-            
-            <p class="contact-cta">Feel free to contact me :)</p>
+      <div class="two-col">
+        <div class="card reveal-up delay-sm">
+          <h3>Experience</h3>
+          <ul class="simple-list">
+            <li><strong>WhiteChop</strong> — Web developer / Develop responsive and scalable website</li>
+            <li><strong>Husband & Wife Restaurant</strong> — Role / brief note</li>
+            <li>Self-employed — Personal projects, freelance work</li>
+            <li>MalcNexus — Backend Engineer</li>
+          </ul>
         </div>
-    </section>
 
-    <footer id="contact">
+        <div class="card reveal-up delay-md">
+          <h3>Education</h3>
+          <ul class="simple-list">
+            <li>Undergraduate in Computer Science</li>
+            <li>ALX Graduate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <h2>Projects</h2>
+        <p></p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Example project — duplicate & edit to add yours -->
+        <article class="project-card reveal-up">
+          <h3>Personal Blog / Portfolio</h3>
+          <p>Responsive static site built with HTML/CSS and deployed on GitHub Pages.</p>
+          <div class="project-meta">
+            <a href="https://victormarshall911.github.io/Cv/" target="_blank" rel="noopener" class="btn btn-sm">View Live</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal-up">
+            <h3>E-commerce Mobile Application</h3>
+            <p>Responsive mobile application. Enables businesses upload products and create business profile, enables customers create profile and view products.</p>
+        </article>
+
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
         <h2>Get In Touch</h2>
-        <div class="social-links">
-            <a href="mailto:marshallvictor46@gmail.com" title="Email me">
-                <img src="gmail-icon.png" alt="Gmail" class="gmail-icon" height="55">
-            </a>
-            <a href="https://www.linkedin.com/in/marshall-victor-501460213/" target="_blank" title="LinkedIn Profile">
-                <img src="linkedin-icon.png" alt="LinkedIn Profile" class="linkedin-icon" height="55">
-            </a>
-            <a href="https://wwww.facebook.com/profile.php?id=61576767331802" target="_blank" title="Facebook Profile">
-                <img src="facebook-icon.png" alt="Facebook Profile" class="facebook-icon" height="55">
-            </a>
-            <a href="https://x.com/marshallvicto18" target="_blank" title="X (Twitter) Profile">
-                <img src="x-icon.png" alt="X Profile" class="x-icon" height="55">
-            </a>
+        <p>Feel free to reach out for work, collaboration, or a friendly chat.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-up delay-sm">
+          <div class="contact-item">
+            <div class="icon">📍</div>
+            <div>
+              <h4>Location</h4>
+              <p>Lagos, Nigeria</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:marshallvictor46@gmail.com">marshallvictor46@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">💬</div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p><a href="https://wa.me/2349165283674" target="_blank" rel="noopener">+234 916 528 3674</a></p>
+            </div>
+          </div>
         </div>
-    </footer>
 
-    <script>
-        // Enhanced JavaScript for better user experience
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hamburger menu functionality
-            const hamburger = document.getElementById('hamburger');
-            const navMenu = document.getElementById('nav-menu');
-            
-            hamburger.addEventListener('click', function() {
-                hamburger.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-            
-            // Close menu when clicking on a link
-            document.querySelectorAll('.nav-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }
-            });
-            
-            // Close menu when pressing Escape key
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape') {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }
-            });
+        <div class="contact-form-card reveal-up delay-md">
+          <form id="contactForm" action="https://formspree.io/f/mdkwlpld" method="POST" class="contact-form">
+            <input type="hidden" name="_subject" id="emailSubject" value="New Victor Marshall Inquiry" />
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" class="form-control" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" class="form-control" required />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-control" required placeholder="Tell me about your project"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+            <div id="formStatus" aria-live="polite" style="margin-top:10px;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            // Smooth reveal animation for hidden content
-            document.querySelectorAll('section h2').forEach(function(header) {
-                header.addEventListener('click', function() {
-                    const nextElement = header.nextElementSibling;
-                    
-                    if (nextElement.classList.contains('hidden')) {
-                        nextElement.classList.remove('hidden');
-                        nextElement.classList.add('show');
-                    } else {
-                        nextElement.classList.remove('show');
-                        nextElement.classList.add('hidden');
-                    }
-                });
-            });
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Victor Marshall</h4>
+        <p>Web Developer & Software Engineer. Building simple, usable, scalable software.</p>
+      </div>
 
-            // Add scroll effect to navigation
-            window.addEventListener('scroll', function() {
-                const nav = document.querySelector('nav');
-                if (window.scrollY > 100) {
-                    nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                    nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
-                } else {
-                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                    nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-                }
-            });
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
 
-            // Add intersection observer for fade-in animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <p><a href="https://github.com/victormarshall911" target="_blank" rel="noopener">GitHub</a> · <a href="#" target="_blank">LinkedIn</a></p>
+      </div>
 
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
+     
+    </div>
 
-            // Observe all sections
-            document.querySelectorAll('section').forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
+    <div class="footer-bottom">
+      <small>&copy; <span id="year"></span> Victor Marshall — All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // basic helpers & DOM
+    const root = document.documentElement;
+    const darkToggle = document.getElementById('darkToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const nav = document.querySelector('.main-nav ul');
+
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = nav.dataset.open === 'true';
+      nav.style.display = isOpen ? '' : 'flex';
+      nav.dataset.open = (!isOpen).toString();
+    });
+
+    // Smooth scroll for same-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const targetId = a.getAttribute('href');
+        if (targetId.length === 1) return; // '#'
+        const el = document.querySelector(targetId);
+        if (!el) return;
+        e.preventDefault();
+        const top = el.offsetTop - 72; // header offset
+        window.scrollTo({ top, behavior: 'smooth' });
+        // close mobile nav on click (mobile)
+        if (window.innerWidth < 768) {
+          nav.style.display = '';
+          nav.dataset.open = 'false';
+        }
+      });
+    });
+
+    // Dark mode logic (modern gray choice)
+    const DARK_KEY = 'vm_dark_mode_v1';
+    function setDark(isDark, persist = true) {
+      if (isDark) {
+        root.classList.add('dark');
+        darkToggle.classList.add('active');
+      } else {
+        root.classList.remove('dark');
+        darkToggle.classList.remove('active');
+      }
+      if (persist) localStorage.setItem(DARK_KEY, isDark ? '1' : '0');
+    }
+
+    // initialize based on localStorage or system preference
+    const saved = localStorage.getItem(DARK_KEY);
+    if (saved === null) {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setDark(prefersDark, false);
+    } else {
+      setDark(saved === '1', false);
+    }
+
+    darkToggle.addEventListener('click', () => {
+      setDark(!document.documentElement.classList.contains('dark'));
+    });
+
+    // IntersectionObserver reveal animations
+    const revealElements = document.querySelectorAll('.reveal-up');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => io.observe(el));
+
+    // Contact form (Formspree) AJAX submit with messages
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const statusEl = document.getElementById('formStatus');
+        statusEl.textContent = '';
+        document.getElementById('emailSubject').value = 'New Victor Marshall Inquiry';
+        const formData = new FormData(contactForm);
+        try {
+          const res = await fetch(contactForm.action, {
+            method: contactForm.method,
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            statusEl.innerHTML = '<span class="success">✅ Thank you! I will get back to you soon.</span>';
+            contactForm.reset();
+          } else {
+            statusEl.innerHTML = '<span class="error">❌ Oops — something went wrong. Please try again.</span>';
+          }
+        } catch (err) {
+          statusEl.innerHTML = '<span class="error">❌ Network error — try again later.</span>';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
