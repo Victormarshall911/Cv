@@ -154,6 +154,35 @@ label{ font-weight:600; margin-bottom:6px; display:block; color:var(--text); }
 .reveal-up.delay-md{ transition-delay:220ms; }
 .reveal-up.is-visible{ opacity:1; transform:translateY(0); }
 
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: background 0.3s, transform 0.3s;
+}
+
+:root.dark .social-links a {
+  background: var(--glass);
+  color: var(--text);
+}
+
+.social-links a:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
+
 /* responsive */
 @media (max-width: 992px){
   .hero-inner{ grid-template-columns: 1fr; gap:18px; }
