@@ -12,6 +12,23 @@
 </head>
 
 <body>
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-logo">V</div>
+  </div>
+
+  <!-- Mobile Sidebar -->
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+  <nav id="mobileSidebar" class="mobile-sidebar">
+    <button id="sidebarClose" class="sidebar-close" aria-label="Close menu">✕</button>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <a href="resume.pdf" download class="btn btn-resume" style="margin-top: 16px; text-align: center;">📄 Resume</a>
+  </nav>
+
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
@@ -44,14 +61,18 @@
 
   <!-- Hero -->
   <section id="home" class="hero">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
     <div class="container hero-inner">
       <div class="hero-copy reveal-up">
         <h2>Building the Future of Digital Experiences</h2>
-        <p>I'm a Fullstack Software Developer based in Lagos, Nigeria. I specialize in building high-performance mobile
+        <p>I'm a <span class="typing-wrapper"><span id="typingText" class="typing-text">Fullstack Developer</span><span class="typing-cursor"></span></span> based in Lagos, Nigeria. I specialize in building high-performance mobile
           apps and scalable web architectures that solve real-world problems.</p>
         <div class="hero-ctas">
           <a href="#projects" class="btn btn-primary">View My Work</a>
           <a href="#contact" class="btn btn-outline">Let's Talk</a>
+          <a href="resume.pdf" download class="btn btn-resume">📄 Resume</a>
         </div>
       </div>
       <div class="hero-visual reveal-up delay-sm">
@@ -92,6 +113,30 @@
     </div>
   </section>
 
+  <!-- Stats Counter -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid reveal-up">
+        <div class="stat-item">
+          <div class="stat-number" data-target="6">0</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="3">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="5">0</div>
+          <div class="stat-label">Technologies Mastered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="100" data-suffix="%">0</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects -->
   <section id="projects" class="section">
     <div class="container">
@@ -100,9 +145,19 @@
         <p>A showcase of my recent engineering work and creative solutions.</p>
       </div>
 
+      <div class="filter-bar reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Mobile App">Mobile App</button>
+        <button class="filter-btn" data-filter="Fullstack">Fullstack</button>
+        <button class="filter-btn" data-filter="Fintech / Social">Social</button>
+        <button class="filter-btn" data-filter="Automation">Automation</button>
+        <button class="filter-btn" data-filter="Marketplace">Marketplace</button>
+        <button class="filter-btn" data-filter="Utility">Utility</button>
+      </div>
+
       <div class="projects-grid">
         <!-- Project 1: HabitFlow -->
-        <article class="project-card reveal-up">
+        <article class="project-card reveal-up" data-category="Mobile App">
           <div class="project-image">
             <img src="images/Habit_ SS.png" alt="HabitFlow App Mockup" loading="lazy" />
           </div>
@@ -124,7 +179,7 @@
         </article>
 
         <!-- Project 2: RoomieSync -->
-        <article class="project-card reveal-up delay-sm">
+        <article class="project-card reveal-up delay-sm" data-category="Fintech / Social">
           <div class="project-image">
             <img src="images/roomiesync.png" alt="RoomieSync App Mockup" loading="lazy" />
           </div>
@@ -145,7 +200,7 @@
         </article>
 
         <!-- Project 3: NexTalk -->
-        <article class="project-card reveal-up delay-md">
+        <article class="project-card reveal-up delay-md" data-category="Fullstack">
           <div class="project-image">
             <img src="images/nextalk.png" alt="NexTalk App Mockup" loading="lazy" />
           </div>
@@ -165,7 +220,7 @@
         </article>
 
         <!-- Project 4: JobHunt Scraper -->
-        <article class="project-card reveal-up">
+        <article class="project-card reveal-up" data-category="Automation">
           <div class="project-image">
             <img src="images/jobhunt.png" alt="JobHunt Scraper Mockup" loading="lazy" />
           </div>
@@ -185,7 +240,7 @@
         </article>
 
         <!-- Project 5: Artiz -->
-        <article class="project-card reveal-up delay-sm">
+        <article class="project-card reveal-up delay-sm" data-category="Marketplace">
           <div class="project-image">
             <img src="images/artiz.png" alt="Artiz Marketplace Mockup" loading="lazy" />
           </div>
@@ -204,7 +259,7 @@
         </article>
 
         <!-- Project 6: Unizik Navigator -->
-        <article class="project-card reveal-up delay-md">
+        <article class="project-card reveal-up delay-md" data-category="Utility">
           <div class="project-image">
             <img src="images/navigator.png" alt="Unizik Navigator Mockup" loading="lazy" />
           </div>
@@ -233,20 +288,69 @@
         <p>The tools and technologies I use to bring ideas to life.</p>
       </div>
 
-      <div class="skills-grid reveal-up">
-        <div class="skill">React Native</div>
-        <div class="skill">Django</div>
-        <div class="skill">Python</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">TypeScript</div>
-        <div class="skill">Supabase</div>
-        <span class="skill">Zustand</span>
-        <div class="skill">REST APIs</div>
-        <div class="skill">WebSockets</div>
-        <div class="skill">PostgreSQL</div>
-        <div class="skill">Git & GitHub</div>
-        <div class="skill">Expo SDK</div>
-        <div class="skill">Automation</div>
+      <div class="skills-categories reveal-up">
+        <!-- Languages -->
+        <div class="skill-category">
+          <div class="skill-category-title"><span class="cat-icon">💻</span> Languages</div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>JavaScript</span><span>92%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>TypeScript</span><span>85%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Python</span><span>88%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>SQL</span><span>80%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+          </div>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="skill-category">
+          <div class="skill-category-title"><span class="cat-icon">⚡</span> Frameworks</div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>React Native</span><span>95%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Django / DRF</span><span>87%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="87"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Expo SDK</span><span>90%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Zustand</span><span>82%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+          </div>
+        </div>
+
+        <!-- Tools & Platforms -->
+        <div class="skill-category">
+          <div class="skill-category-title"><span class="cat-icon">🛠</span> Tools & Platforms</div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Supabase</span><span>88%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Git & GitHub</span><span>90%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>PostgreSQL</span><span>83%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="83"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>REST / WebSockets</span><span>86%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="86"></div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -326,6 +430,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="resume.pdf" download>📄 Resume</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -365,8 +470,15 @@
     </div>
   </footer>
 
+  <!-- Back to Top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
   <script>
-    // Theme Toggle
+    // ===== Theme Toggle =====
     const root = document.documentElement;
     const darkToggle = document.getElementById('darkToggle');
     const DARK_KEY = 'vm_theme';
@@ -389,24 +501,73 @@
     const savedTheme = localStorage.getItem(DARK_KEY) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     setTheme(savedTheme === 'dark');
 
-    // Mobile Menu
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-    mobileMenuBtn.addEventListener('click', () => {
-      navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-      if (navMenu.style.display === 'flex') {
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '72px';
-        navMenu.style.left = '0';
-        navMenu.style.width = '100%';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.background = 'var(--bg-primary)';
-        navMenu.style.padding = '24px';
-        navMenu.style.borderBottom = '1px solid var(--card-border)';
-      }
+    // ===== Preloader =====
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').classList.add('hidden');
+      }, 600);
     });
 
-    // Reveal Animations
+    // ===== Mobile Sidebar =====
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const sidebarClose = document.getElementById('sidebarClose');
+
+    function openSidebar() {
+      mobileSidebar.classList.add('open');
+      sidebarOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+      mobileSidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn.addEventListener('click', openSidebar);
+    sidebarClose.addEventListener('click', closeSidebar);
+    sidebarOverlay.addEventListener('click', closeSidebar);
+
+    mobileSidebar.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', closeSidebar);
+    });
+
+    // ===== Typing Animation =====
+    const typingEl = document.getElementById('typingText');
+    const roles = ['Fullstack Developer', 'Mobile Engineer', 'Problem Solver', 'Software Architect'];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const currentRole = roles[roleIndex];
+      if (isDeleting) {
+        typingEl.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingEl.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let delay = isDeleting ? 40 : 80;
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        delay = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        delay = 400;
+      }
+
+      setTimeout(typeEffect, delay);
+    }
+
+    setTimeout(typeEffect, 1200);
+
+    // ===== Reveal Animations =====
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -417,10 +578,132 @@
 
     document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
 
-    // Year
+    // ===== Scroll-Spy Navigation =====
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.main-nav a');
+
+    function updateScrollSpy() {
+      const scrollY = window.scrollY + 100;
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        if (scrollY >= top && scrollY < top + height) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+            }
+          });
+          // Also update sidebar links
+          mobileSidebar.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateScrollSpy);
+    updateScrollSpy();
+
+    // ===== Project Filtering =====
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        projectCards.forEach(card => {
+          card.classList.remove('filter-show', 'filter-hidden');
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('filter-hidden');
+            requestAnimationFrame(() => card.classList.add('filter-show'));
+          } else {
+            card.classList.add('filter-hidden');
+          }
+        });
+      });
+    });
+
+    // ===== Skill Bar Animation =====
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+          skillObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.skill-category').forEach(cat => skillObserver.observe(cat));
+
+    // ===== Stats Counter Animation =====
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.stat-number').forEach(stat => {
+            const target = parseInt(stat.dataset.target);
+            const suffix = stat.dataset.suffix || '+';
+            const duration = 1500;
+            const startTime = performance.now();
+
+            function animate(currentTime) {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const current = Math.floor(eased * target);
+              stat.textContent = current + (progress >= 1 ? suffix : '');
+              if (progress < 1) requestAnimationFrame(animate);
+            }
+
+            requestAnimationFrame(animate);
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.stats-grid').forEach(grid => statsObserver.observe(grid));
+
+    // ===== Back to Top =====
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ===== Parallax-lite Hero =====
+    const heroVisual = document.querySelector('.hero-visual');
+    if (heroVisual) {
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (scrollY < 800) {
+          heroVisual.style.transform = `translateY(${scrollY * 0.08}px)`;
+        }
+      });
+    }
+
+    // ===== Year =====
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Form Submit
+    // ===== Form Submit =====
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
